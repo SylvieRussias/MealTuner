@@ -1,0 +1,30 @@
+<div class="label-wrapper">
+    <div class="label-container">
+        <div class="label-background"></div>
+        <div>{{_text}}</div>
+        <div class="text">
+            <mat-form-field
+                *ngIf="isInputOpen; else simpleTextDisplay"
+                [floatLabel]="'never'"
+                class="text-input"
+            >
+                <input
+                    matInput
+                    #textInput="matInput"
+                    [formControl]="textInputController"
+                    (change)="leaveTextInput()"
+                    (focusout)="leaveTextInput()"
+                    placeholder="{{textPlaceholder}}"
+                >
+            </mat-form-field>
+            <ng-template #simpleTextDisplay>{{_text}}</ng-template>
+        </div>
+        <app-button-small
+            *ngIf="isEditButtonVisible()"
+            [matDefaultIconName]="'edit'"
+            [style]="editButtonStyle"
+            (click)="openTextInput()"
+            class="edit-button"
+        ></app-button-small>
+    </div>
+</div>

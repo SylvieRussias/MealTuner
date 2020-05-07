@@ -1,0 +1,77 @@
+@import "variables";
+@import "mixins";
+
+.page-content {
+    @include page-content;
+}
+
+.recipe-illustration {
+    position: relative;
+    height: 14rem;
+    width: 100%;
+    background-image: url(../../../../../assets/images/cooking.jpg);
+    background-size: cover;
+    background-position: 0% 65%;
+}
+
+$gradient-dark: #0000008f;
+$gradient-light: #00000018;
+
+.recipe-illustration-gradient {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        $gradient-dark 0%,
+        $gradient-light 50%,
+        $gradient-light 90%,
+        $gradient-dark 100%
+    );
+}
+
+.recipe-name {
+    position: absolute;
+    width: 100%;
+    bottom: -1rem;
+}
+
+.main-content-and-margins-wrapper {
+    display: flex;
+    padding-bottom: 2rem;
+}
+
+.left-margin {
+    flex-grow: 0.2;
+}
+
+.right-margin {
+    flex-grow: 0.2;
+}
+
+.recipe-main-content-wrapper {
+    position: relative;
+    max-width: 90rem;
+    margin: 1rem auto;
+    flex-grow: 0.4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipe-details-wrapper {
+    padding: 2rem 1rem 0.8rem 0rem;
+    display: block;
+}
+
+.editable-recipe-wrapper {
+    display: block;
+}
+
+.description-wrapper {
+    padding: 0 1rem;
+    max-width: 50rem;
+
+    @include media-more-narrow-than("medium") {
+        width: $mobile-max-element-width;
+        padding: 0 !important;
+    }
+}

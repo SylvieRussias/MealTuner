@@ -1,0 +1,13 @@
+<div
+    class="app-slider-wrapper main-theme"
+    (mouseup)="mouseUp()"
+    (touchend)="mouseUp()"
+>
+    <mat-slider
+        min="{{ possibleValuesInterval.min }}"
+        max="{{ possibleValuesInterval.max }}"
+        value="{{ value }}"
+        (input)="changeTempValue($event)"
+        (change)="changeValue($event)"
+    ></mat-slider>
+</div>

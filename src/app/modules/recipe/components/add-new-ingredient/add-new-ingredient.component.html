@@ -1,0 +1,29 @@
+<form class="form">
+    <mat-icon class="add-icon">add</mat-icon>
+    <mat-form-field class="add-new-ingredient">
+        <mat-label>Add ingredient...</mat-label>
+        <input
+            matInput
+            placeholder="Ex. Chocolate"
+            [formControl]="newIngredientSearchText"
+            [matAutocomplete]="auto"
+            (input)="autoCompleteSearch()"
+            (change)="searchIngredient()"
+            (keydown.enter)="addIngredientOfFirstAutoCompleteOption()"
+            (blur)="resetInput()"
+        >
+    </mat-form-field>
+    <mat-autocomplete
+        #auto="matAutocomplete"
+        (optionSelected)="addIngredient($event.option.value)"
+    >
+        <ng-container *ngIf="!isSearchTextEmpty()">
+            <mat-option
+                *ngFor="let ingredient of ingredientSearchAutoComplete$ | async"
+                [value]="ingredient"
+            >
+                {{ingredient.name}}
+            </mat-option>
+        </ng-container>
+    </mat-autocomplete>
+</form>

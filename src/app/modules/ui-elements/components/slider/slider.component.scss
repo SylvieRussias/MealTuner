@@ -1,0 +1,22 @@
+@import 'variables';
+@import 'mixins';
+
+@mixin slider-color($color) {
+    ::ng-deep .mat-accent:not(.mat-slider-min-value) {
+
+        .mat-slider-thumb,
+        .mat-slider-thumb-label,
+        .mat-slider-track-fill {
+            background-color: $color;
+            @include simple-box-shadow();
+        }
+    }
+}
+
+.app-slider-wrapper {
+    @include slider-simple-wrapper();
+}
+
+.main-theme {
+    @include slider-color($color-primary);
+}

@@ -1,0 +1,33 @@
+<div
+    class="slider-wrapper"
+    [ngClass]="{
+    'good-thumb-marker': isValueGood(),
+    'medium-thumb-marker': isValueMedium(),
+    'bad-thumb-marker': isValueBad()
+}"
+>
+    <mat-slider
+        min="{{sliderMinValue}}"
+        max="{{sliderMaxValue}}"
+        value="{{currentQuantity}}"
+        disabled="true"
+    ></mat-slider>
+    <div class="interval-track-wrapper">
+        <div
+            class="interval-bad-to-medium"
+            [style.width.%]="badToMediumTrackPartWidth"
+        ></div>
+        <div
+            class="interval-medium-to-good"
+            [style.width.%]="mediumToGoodTrackPartWidth"
+        ></div>
+        <div
+            class="interval-good-to-medium"
+            [style.width.%]="goodToMediumTrackPartWidth"
+        ></div>
+        <div
+            class="interval-medium-to-bad"
+            [style.width.%]="mediumToBadTrackPartWidth"
+        ></div>
+    </div>
+</div>

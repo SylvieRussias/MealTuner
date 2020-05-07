@@ -1,0 +1,66 @@
+{
+    "name": "Power Breakfast",
+    "description": "Fry the eggs and the ham together. \nServe the chocolate with the bread. \nAnd it's ready !",
+    "ingredients": [
+        {
+            "name": "Bread",
+            "quantity": 303,
+            "nutrients": {
+                "Protein": 7.02,
+                "Fat": 15.79,
+                "Carbohydrate": 42.11,
+                "Sugars": 1.7500000000000002,
+                "SaturatedFat": 2.63,
+                "referenceQuantity": 100
+            }
+        },
+        {
+            "name": "Chocolate",
+            "quantity": 60,
+            "nutrients": {
+                "Protein": 5.56,
+                "Fat": 27.779999999999998,
+                "Carbohydrate": 61.11,
+                "Sugars": 61.11,
+                "SaturatedFat": 19.44,
+                "referenceQuantity": 100
+            }
+        },
+        {
+            "name": "Egg",
+            "quantity": 150,
+            "nutrients": {
+                "Fat": 0,
+                "SaturatedFat": 0,
+                "Protein": 9.73,
+                "Carbohydrate": 1.77,
+                "Sugars": 0,
+                "referenceQuantity": 100
+            }
+        },
+        {
+            "name": "Ham",
+            "quantity": 90,
+            "nutrients": {
+                "Protein": 12.5,
+                "Fat": 3.5699999999999994,
+                "Carbohydrate": 5.36,
+                "Sugars": 3.5699999999999994,
+                "SaturatedFat": 0.89,
+                "referenceQuantity": 100
+            }
+        },
+        {
+            "name": "Orange juice",
+            "quantity": 606,
+            "nutrients": {
+                "Fat": 0,
+                "SaturatedFat": 0,
+                "Protein": 0.83,
+                "Carbohydrate": 11.67,
+                "Sugars": 9.58,
+                "referenceQuantity": 100
+            }
+        }
+    ]
+}

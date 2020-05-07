@@ -1,0 +1,21 @@
+@import "variables";
+@import "mixins";
+
+.nutrient-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.nutrient-name {
+    @include slider-left-label;
+}
+
+.slider-wrapper {
+    @include slider-resize-wrapper;
+}
+
+.quantity {
+    @include slider-right-label;
+    text-align: right;
+}

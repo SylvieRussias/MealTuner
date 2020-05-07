@@ -1,0 +1,6 @@
+@import "variables";
+@import "mixins";
+
+.bottom-buttons {
+    @include dialog-button-group;
+}

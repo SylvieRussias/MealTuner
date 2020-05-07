@@ -1,0 +1,31 @@
+<div class="recipe-search-page-main-wrapper">
+    <div class="background"></div>
+    <div class="recipe-search-page-main-content">
+        <h1 class="title">Saved recipes</h1>
+        <form class="search-bar-wrapper">
+            <mat-form-field class="search-bar">
+                <input
+                    matInput
+                    placeholder="Search..."
+                    [formControl]="searchText"
+                    (input)="filter()"
+                    (change)="filter()"
+                >
+            </mat-form-field>
+        </form>
+        <div class="recipe-list-wrapper">
+            <app-recipe-summary
+                *ngFor="let recipe of filteredRecipes"
+                [recipe]="recipe"
+                (click)="confirmRecipeSelection(recipe)"
+            ></app-recipe-summary>
+        </div>
+        <app-button-small
+            [matDefaultIconName]="'add'"
+            [style]="startNewRecipeButtonStyle"
+            [size]="startNewRecipeButtonSize"
+            (buttonClicked)="startNewRecipeButtonClicked()"
+            class="start-new-button"
+        ></app-button-small>
+    </div>
+</div>

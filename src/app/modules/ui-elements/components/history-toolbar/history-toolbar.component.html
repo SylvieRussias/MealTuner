@@ -1,0 +1,14 @@
+<div class="toolbar-wrapper">
+    <app-button-small
+        [matDefaultIconName]="'undo'"
+        [isDisabled]="!isUndoAvailable"
+        [style]="undoRedoButtonStyle"
+        (buttonClicked)="undoClicked.emit()"
+    ></app-button-small>
+    <app-button-small
+        [matDefaultIconName]="'redo'"
+        [isDisabled]="!isRedoAvailbale"
+        [style]="undoRedoButtonStyle"
+        (buttonClicked)="redoClicked.emit()"
+    ></app-button-small>
+</div>

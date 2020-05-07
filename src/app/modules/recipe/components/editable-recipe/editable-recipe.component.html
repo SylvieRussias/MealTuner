@@ -1,0 +1,15 @@
+<div class="edition-wrapper">
+    <app-editable-ingredient-list
+        [editingHistory]="_editingHistory"
+        [ingredientMaxQuantity]="ingredientMaxQuantity"
+        (editingHistoryChange)="triggerEditingHistoryChange($event)"
+        class="edition-block"
+    ></app-editable-ingredient-list>
+    <div class="edition-block">
+        <app-profile-preview></app-profile-preview>
+        <app-food-nutrients
+            [nutrients]="_editingHistory.nutrientsRelativeToProfile"
+            class="nutrients-details"
+        ></app-food-nutrients>
+    </div>
+</div>

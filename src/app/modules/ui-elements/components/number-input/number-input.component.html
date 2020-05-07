@@ -1,0 +1,26 @@
+<div class="number-input-wrapper">
+    <app-button-small
+        [matDefaultIconName]="'remove'"
+        [size]="addAndRemoveButtonSize"
+        [isDisabled]="!canRemoveOne()"
+        (buttonClicked)="removeOne()"
+    ></app-button-small>
+    <mat-form-field
+        [floatLabel]="'never'"
+        class="number-input"
+    >
+        <input
+            matInput
+            #textInput="matInput"
+            [formControl]="numberInputController"
+            [type]="'number'"
+            (change)="triggerValueChange()"
+            (focusout)="triggerValueChange()"
+        >
+    </mat-form-field>
+    <app-button-small
+        [matDefaultIconName]="'add'"
+        [size]="addAndRemoveButtonSize"
+        (buttonClicked)="addOne()"
+    ></app-button-small>
+</div>

@@ -1,0 +1,35 @@
+<div class="main-wrapper">
+    <app-header
+        class="header"
+        (menuButtonClicked)="toggleSideNav()"
+        (profileButtonClicked)="goToProfilePage()"
+    ></app-header>
+    <mat-drawer-container
+        class="page-with-sidebar"
+        [hasBackdrop]="sideNavStyle.isMainContentShadowedWhenSideNavIsOpened"
+    >
+        <mat-drawer
+            #drawer
+            [autoFocus]="false"
+            [mode]="sideNavStyle.sideNavOpenningMode"
+        >
+            <app-side-nav
+                [menu]="sideNavMenu"
+                (selectMenuItem)="selectMenuItem($event)"
+            ></app-side-nav>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div
+                [ngSwitch]="currentPage$ | async"
+                class="page-content"
+            >
+                <app-recipe-editing-page *ngSwitchCase="AppPages.RecipeEditing"></app-recipe-editing-page>
+                <app-recipe-search-page
+                    *ngSwitchCase="AppPages.SearchRecipe"
+                    (selectRecipe)="openRecipe($event)"
+                    (startNewRecipe)="startNewRecipe()"
+                ></app-recipe-search-page>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

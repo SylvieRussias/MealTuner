@@ -1,0 +1,32 @@
+@import "sass/variables";
+@import "sass/mixins";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    @include media-more-narrow-than("small") {
+        font-size: 13px;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+    color: $text-color-primary;
+    font-size: 1.6rem;
+    text-shadow: #00000012 1px 0 4px;
+}
+
+h1 mat-icon {
+    height: unset !important;
+    width: unset !important;
+    font-size: 1.8rem !important;
+    vertical-align: text-top;
+}

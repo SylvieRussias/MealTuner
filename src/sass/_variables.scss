@@ -1,0 +1,22 @@
+$color-primary: #bd29ce;
+
+$color-primary-for-gradient: #e044d9;
+
+$text-color-primary: darken($color-primary, 8);
+
+$color-secondary: #272350;
+
+$color-faded: #827e94;
+
+$color-smooth-accentuation: #eaeaea;
+
+$mobile-max-element-width: 24rem;
+
+$breakpoints: (
+    "small": 600px,
+    "medium": 960px,
+    "large": 1280px,
+    "xl": 1920px,
+) !default;
+
+$header-navbar-height: 4rem;

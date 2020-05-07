@@ -1,0 +1,30 @@
+@import "variables";
+@import "mixins";
+
+$margin-between-edition-blocks: 1rem;
+
+.edition-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    @include media-larger-than("small") {
+        margin-top: -1rem;
+    }
+}
+
+.edition-block {
+    width: $mobile-max-element-width;
+
+    @include media-larger-than("small") {
+        margin: 1rem;
+    }
+}
+
+.nutrients-details {
+    display: inline-block;
+    width: 100%;
+}

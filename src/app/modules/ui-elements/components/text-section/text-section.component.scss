@@ -1,0 +1,24 @@
+@import "variables";
+@import "mixins";
+
+.section-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.edit-button {
+    margin: 0.6rem 0 0 0.6rem;
+}
+
+.form {
+    @include mat-input-color($color-primary);
+}
+
+.text-input {
+    width: 100%;
+}
+
+.simple-text {
+    white-space: pre-line;
+}

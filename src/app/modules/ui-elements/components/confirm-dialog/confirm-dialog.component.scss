@@ -1,0 +1,14 @@
+@import "variables";
+@import "mixins";
+
+.dialog-question {
+    @include dialog-title;
+}
+
+.dialog-button-group {
+    @include dialog-button-group;
+}
+
+.dialog-button {
+    margin: 0.2rem;
+}

@@ -1,0 +1,38 @@
+@import "variables";
+@import "mixins";
+
+.header {
+    @include header;
+}
+
+.header-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.app-title {
+    flex-grow: 1;
+    padding-top: 5px;
+}
+
+.header-right-wrapper {
+    flex-grow: 0.2;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 10px 0 0;
+}
+
+$logo-size: 33px;
+
+.app-icon {
+    margin: 0.4rem 0.3rem 0 0;
+    height: $logo-size;
+    width: $logo-size;
+    background-image: url("../../../../../assets/icon/icon-no-border.svg");
+    background-size: contain;
+}

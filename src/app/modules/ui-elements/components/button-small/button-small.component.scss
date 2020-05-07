@@ -1,0 +1,78 @@
+@import "variables";
+@import "mixins";
+
+$default-icon-color: #333333;
+$icon-color-for-dark-background: #f0f0f0;
+$default-background-color: $color-smooth-accentuation;
+
+.button-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+$large-size: 52px;
+
+.larger-size {
+    max-width: $large-size;
+    height: $large-size;
+}
+
+.standard-size {
+    max-width: 40px;
+}
+
+.xs-size {
+    max-width: 21px;
+    max-height: 21px;
+}
+
+.xs-size * {
+    font-size: 20px;
+    vertical-align: bottom;
+}
+
+.larger-size .button {
+    height: 100%;
+    width: 100%;
+    margin-left: -6px;
+}
+
+.standard-size .button {
+    margin-left: -13px;
+    margin-top: -1px;
+}
+
+.xs-size .button {
+    margin-left: -22.4px;
+    margin-top: -12px;
+}
+
+.button {
+    background-color: inherit;
+    color: inherit;
+}
+
+.default {
+    background-color: $default-background-color;
+    border: 1px solid darken($color: $default-background-color, $amount: 7);
+    color: $default-icon-color;
+}
+
+.black-no-border {
+    color: #444444;
+}
+
+.white-no-border {
+    color: white;
+}
+
+.main-color-no-border {
+    color: $text-color-primary;
+}
+
+.main-color-background {
+    @include gradient-background($color-primary-for-gradient);
+    color: $icon-color-for-dark-background;
+    @include strong-box-shadow();
+}

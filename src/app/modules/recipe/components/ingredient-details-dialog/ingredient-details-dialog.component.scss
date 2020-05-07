@@ -1,0 +1,20 @@
+@import "variables";
+@import "mixins";
+
+.dialog-wrapper {
+    min-width: 12rem;
+}
+
+.title {
+    @include dialog-title;
+}
+
+.nutrient-text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.7rem 0;
+}
+
+.bottom-buttons {
+    @include dialog-button-group;
+}

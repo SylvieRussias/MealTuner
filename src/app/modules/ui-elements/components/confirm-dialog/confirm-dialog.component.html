@@ -1,0 +1,16 @@
+<div class="dialog-question">{{input.question}}</div>
+<div class="dialog-button-group">
+    <app-button-standard
+        [text]="input.confirmText"
+        [shape]="buttonsStyle"
+        (click)="confirm()"
+        class="dialog-button"
+    ></app-button-standard>
+    <app-button-standard
+        [text]="'Cancel'"
+        [style]="cancelButtonStyle"
+        [shape]="buttonsStyle"
+        (click)="cancel()"
+        class="dialog-button"
+    ></app-button-standard>
+</div>

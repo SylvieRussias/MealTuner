@@ -1,0 +1,33 @@
+<div class="section-header">
+    <h1>{{title}}</h1>
+    <app-button-small
+        *ngIf="isEditButtonVisible()"
+        [matDefaultIconName]="'edit'"
+        [style]="editButtonStyle"
+        (click)="openTextInput()"
+        class="edit-button"
+    ></app-button-small>
+</div>
+<form class="form">
+    <mat-form-field
+        *ngIf="isInputOpen; else simpleTextDisplay"
+        [floatLabel]="'never'"
+        appearance="outline"
+        class="text-input"
+    >
+        <textarea
+            matInput
+            #textInput="matInput"
+            [formControl]="textInputController"
+            (change)="leaveTextInput()"
+            (focusout)="leaveTextInput()"
+            placeholder="{{textPlaceholder}}"
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="15"
+        ></textarea>
+    </mat-form-field>
+</form>
+<ng-template #simpleTextDisplay>
+    <div class="simple-text">{{_text}}</div>
+</ng-template>

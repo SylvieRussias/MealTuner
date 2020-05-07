@@ -1,0 +1,19 @@
+@import "variables";
+@import "mixins";
+
+.form {
+    margin-top: 0.5rem;
+    @include mat-input-color($color-primary);
+}
+
+.add-new-ingredient {
+    width: 15.5rem;
+    margin-top: -0.3rem;
+}
+
+.add-icon {
+    width: 3rem;
+    text-align: center;
+    color: #333333;
+    vertical-align: middle;
+}

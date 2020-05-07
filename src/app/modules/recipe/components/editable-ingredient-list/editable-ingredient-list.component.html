@@ -1,0 +1,21 @@
+<div class="header">
+    <h1>Ingredients</h1>
+    <app-history-toolbar
+        [isUndoAvailable]="canUndo()"
+        [isRedoAvailbale]="canRedo()"
+        (undoClicked)="undo()"
+        (redoClicked)="redo()"
+        class="history-toolbar"
+    ></app-history-toolbar>
+</div>
+<div *ngFor="let quantifiedIngredient of ingredients.keysValues">
+    <app-editable-ingredient
+        [ingredient]="quantifiedIngredient.key"
+        [quantity]="quantifiedIngredient.value"
+        [maxQuantity]="ingredientMaxQuantity"
+        (quantityChange)="setIngredientQuantity(quantifiedIngredient.key, $event)"
+        (quantityChangeTemp)="setIngredientTemporaryQuantity(quantifiedIngredient.key, $event)"
+        (ingredientRemoved)="removeIngredient(quantifiedIngredient.key)"
+    ></app-editable-ingredient>
+</div>
+<app-add-new-ingredient (addNewIngredient)="addNewIngredient($event)"></app-add-new-ingredient>

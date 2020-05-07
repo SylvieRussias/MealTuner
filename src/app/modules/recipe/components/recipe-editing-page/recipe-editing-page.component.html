@@ -1,0 +1,33 @@
+<div class="page-content">
+    <div class="recipe-illustration">
+        <div class="recipe-illustration-gradient"></div>
+        <app-title-label
+            [isEditable]="true"
+            [text]="(editingHistory$ | async).recipeRelativeToProfile.name"
+            [textPlaceholder]="'Recipe name'"
+            (textChange)="setNewRecipeTitle($event)"
+            class="recipe-name"
+        ></app-title-label>
+    </div>
+    <div class="main-content-and-margins-wrapper">
+        <div class="left-margin"></div>
+        <div class="recipe-main-content-wrapper">
+            <div>
+                <app-editable-recipe
+                    [editingHistory]="editingHistory$ | async"
+                    (editingHistoryChange)="saveUpdatedEdtidingHistory($event)"
+                    class="editable-recipe-wrapper"
+                ></app-editable-recipe>
+            </div>
+            <div class="description-wrapper">
+                <app-text-section
+                    [title]="'Preparation'"
+                    [isEditable]="true"
+                    [text]="(editingHistory$ | async).recipeRelativeToProfile.description"
+                    (textChange)="setNewRecipeDescription($event)"
+                ></app-text-section>
+            </div>
+        </div>
+        <div class="right-margin"></div>
+    </div>
+</div>

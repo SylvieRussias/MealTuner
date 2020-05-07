@@ -1,0 +1,14 @@
+<button
+    mat-button
+    [ngClass]="{
+        'button': true,
+        'rounded': isRounded(),
+        'standard': isStandardStyle(),
+        'secondary': isSecondaryActionStyle()
+    }"
+>
+    <ng-container *ngFor="let icon of matIconsNames">
+        <mat-icon>{{icon}}</mat-icon>
+    </ng-container>
+    {{text}}
+</button>

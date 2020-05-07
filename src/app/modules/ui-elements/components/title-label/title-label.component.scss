@@ -1,0 +1,53 @@
+@import "variables";
+@import "mixins";
+
+$font-size: 1.4rem;
+
+.label-wrapper {
+    position: relative;
+    height: 3 * $font-size;
+}
+
+.label-container {
+    position: absolute;
+    top: 0;
+    height: $font-size;
+    padding: $font-size/2 $font-size * 1.5;
+    font-size: $font-size;
+    white-space: nowrap;
+    min-width: 12rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    top: $font-size;
+    color: white;
+    white-space: nowrap;
+}
+
+.text-input {
+    position: absolute;
+    @include mat-input-color(white);
+    @include mat-input-placeholder-color(white);
+    font-size: 0.75 * $font-size;
+    margin-top: -1.2rem;
+    width: calc(100% - 4rem);
+}
+
+.label-background {
+    position: absolute;
+    top: 0;
+    right: -1rem;
+    width: calc(100% + 2rem);
+    height: calc(290%);
+    transform: skew(20deg);
+    @include gradient-background($color-primary-for-gradient);
+    @include strong-box-shadow();
+}
+
+.edit-button {
+    margin: 0 -1.8rem 0 0.2rem;
+}

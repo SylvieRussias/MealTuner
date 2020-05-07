@@ -1,0 +1,164 @@
+@mixin gradient-background($color) {
+    background: linear-gradient(90deg, $color, gradient-transform($color));
+    color: white;
+}
+
+@function gradient-transform($color) {
+    @return lighten(adjust-hue(saturate($color, 15%), 25), 12%);
+}
+
+@mixin slider-resize-wrapper() {
+    margin: 0px 0.4rem;
+    width: 13.5rem;
+}
+
+@mixin slider-left-label() {
+    @include slider-left-resize;
+    @include slider-label;
+}
+
+@mixin slider-left-resize() {
+    width: 8rem;
+
+    @include media-more-narrow-than("small") {
+        width: 7.5rem;
+    }
+}
+
+@mixin slider-right-label() {
+    width: 3.5rem;
+
+    @include media-more-narrow-than("small") {
+        width: 3rem;
+    }
+
+    @include slider-label;
+}
+
+@mixin slider-label() {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin slider-simple-wrapper() {
+    height: 2.8rem;
+    position: relative;
+
+    mat-slider {
+        width: 100%;
+    }
+}
+
+@mixin dialog-title() {
+    color: $text-color-primary;
+    font-size: 1.5rem;
+}
+
+@mixin dialog-button-group() {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2.1rem -0.2rem -0.3rem -0.2rem;
+}
+
+@mixin simple-box-shadow() {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);
+}
+
+@mixin strong-box-shadow() {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+}
+
+@mixin header {
+    position: relative;
+    top: 0;
+    height: $header-navbar-height;
+    width: 100%;
+    padding: 0;
+    font-size: 1.35rem;
+    @include gradient-background($color-secondary);
+    @include strong-box-shadow();
+}
+
+@mixin navbar-layer() {
+    z-index: 100;
+}
+
+@mixin page-content() {
+    width: 100%;
+    min-height: calc(#{100vh} - #{64px});
+    background-color: #ffffff;
+}
+
+@mixin mat-input-color($color) {
+    $lighten-color: lighten($color, 10);
+    $desaturated-color: desaturate(lighten($color, 20), 100);
+
+    ::ng-deep .mat-input-element {
+        caret-color: $color;
+    }
+
+    ::ng-deep .mat-form-field-underline {
+        background-color: $desaturated-color;
+    }
+
+    ::ng-deep .mat-form-field-ripple {
+        background-color: $lighten-color;
+    }
+
+    ::ng-deep .mat-focused .mat-form-field-label {
+        color: darken($color, 10);
+    }
+
+    ::ng-deep .mat-form-field-outline {
+        color: $desaturated-color;
+    }
+
+    ::ng-deep .mat-form-field-outline-thick {
+        color: $lighten-color;
+    }
+}
+
+@mixin mat-input-placeholder-color($color) {
+    ::ng-deep .mat-form-field-empty.mat-form-field-label {
+        color: $color;
+    }
+}
+
+/// Mixin to manage responsive breakpoints
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin media-larger-than($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        +"Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+/// Mixin to manage responsive breakpoints
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin media-more-narrow-than($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        +"Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}

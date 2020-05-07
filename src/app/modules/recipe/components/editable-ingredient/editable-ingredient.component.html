@@ -1,0 +1,32 @@
+<div class="editable-ingredient-wrapper">
+    <div class="left-label">
+        <div class="ingredient-name">{{_ingredient.name}}</div>
+        <app-button-small
+            *ngIf="isRemoveButtonEnabled()"
+            [matDefaultIconName]="'close'"
+            [size]="removeButtonSize"
+            (click)="removeIngredient()"
+            class="remove-button"
+        ></app-button-small>
+        <div class="quantity">
+            {{quantity.quantityInGrams | number:'.0-0'}}g
+        </div>
+    </div>
+    <div class="slider-wrapper">
+        <app-slider
+            [possibleValuesInterval]="possibleValuesInterval"
+            [value]="quantity.quantityInGrams"
+            (temporaryValueChanged)="setIngredientTemporaryQuantity($event)"
+            (valueChanged)="setIngredientQuantity($event)"
+        >
+        </app-slider>
+    </div>
+    <div class="right-label">
+        <app-button-small
+            [matDefaultIconName]="'info'"
+            [style]="showMoreButtonStyle"
+            (click)="showIngredientDetails()"
+            class="ingredient-show-more-button"
+        ></app-button-small>
+    </div>
+</div>

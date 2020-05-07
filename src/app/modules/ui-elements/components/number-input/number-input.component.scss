@@ -1,0 +1,16 @@
+@import "variables";
+@import "mixins";
+
+.number-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.number-input {
+    width: 3rem;
+    margin: 0 1rem;
+    text-align: center;
+    @include mat-input-color($color-primary);
+    @include mat-input-placeholder-color($color-primary);
+}

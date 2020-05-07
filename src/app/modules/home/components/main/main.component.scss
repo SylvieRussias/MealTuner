@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+
+.main-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #cccccc;
+}
+
+.header {
+    @include navbar-layer();
+}
+
+.page-with-sidebar {
+    flex-grow: 1;
+
+    ::ng-deep .mat-drawer {
+        @include strong-box-shadow;
+    }
+}
+
+.page-content {
+    min-height: 100%;
+}

@@ -1,0 +1,54 @@
+{
+    "name": "Easy Pizza",
+    "description": "Recipe description is empty, but you can write it :)",
+    "ingredients": [
+        {
+            "name": "Pizza dough",
+            "quantity": 303,
+            "nutrients": {
+                "SaturatedFat": 0,
+                "Protein": 9.09,
+                "Fat": 1.82,
+                "Carbohydrate": 47.27,
+                "Sugars": 0,
+                "referenceQuantity": 100
+            }
+        },
+        {
+            "name": "Tomato sauce",
+            "quantity": 303,
+            "nutrients": {
+                "Protein": 2.5,
+                "Fat": 7.5,
+                "Carbohydrate": 20,
+                "Sugars": 25,
+                "SaturatedFat": 1.25,
+                "referenceQuantity": 100
+            }
+        },
+        {
+            "name": "Cheese",
+            "quantity": 90,
+            "nutrients": {
+                "Protein": 25,
+                "Fat": 32.14,
+                "Carbohydrate": 3.5699999999999994,
+                "Sugars": 0,
+                "SaturatedFat": 17.86,
+                "referenceQuantity": 100
+            }
+        },
+        {
+            "name": "Olives",
+            "quantity": 90,
+            "nutrients": {
+                "Protein": 0,
+                "Fat": 16.67,
+                "Carbohydrate": 6.67,
+                "Sugars": 0,
+                "SaturatedFat": 0,
+                "referenceQuantity": 100
+            }
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+<div [ngClass]="{
+    'default': isStandardStyle(),
+    'black-no-border': isBlackNoBorderStyle(),
+    'white-no-border':  isWhiteNoBorderStyle(),
+    'main-color-no-border': isMainColorNoBorderStyle(),
+    'main-color-background': isMainColorBackgroundStyle(),
+    'xs-size': isSizeSmaller(),
+    'standard-size': isSizeNormal(),
+    'larger-size': isSizeLarger(),
+    'button-wrapper': true
+    }">
+    <button
+        mat-button
+        class="button"
+        disabled="{{isDisabled}}"
+        (click)="click()"
+    >
+        <mat-icon>{{matDefaultIconName}}</mat-icon>
+    </button>
+</div>

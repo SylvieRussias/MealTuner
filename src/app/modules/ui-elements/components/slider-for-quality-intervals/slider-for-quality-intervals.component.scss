@@ -1,0 +1,86 @@
+@import "mixins";
+
+$interval-color-bad: #ff8279;
+$interval-color-medium: #ffe374;
+$interval-color-good: #52e26d;
+$marker-bad: #f75449;
+$marker-medium: #ffba09;
+$marker-good: #1a8a2e;
+
+$mat-slide-thumb-size: 34px;
+$mat-slider-padding: 8;
+
+@mixin slider-all-track-no-color() {
+    ::ng-deep {
+        .mat-slider-horizontal .mat-slider-track-wrapper,
+        .mat-slider-horizontal .mat-slider-ticks,
+        .mat-slider-track-background,
+        .mat-accent .mat-slider-track-fill {
+            display: none;
+        }
+    }
+}
+
+@mixin mat-slider-disabled-thumb($color) {
+    ::ng-deep .mat-slider-disabled .mat-slider-thumb {
+        background-color: $color;
+        height: $mat-slide-thumb-size;
+        width: $mat-slide-thumb-size;
+        right: -$mat-slide-thumb-size/2;
+        top: -$mat-slide-thumb-size/2;
+        @include simple-box-shadow();
+        border: 0px solid white;
+    }
+}
+
+@mixin interval-track-parts() {
+    height: 8px;
+    display: inline-block;
+}
+
+.slider-wrapper {
+    @include slider-simple-wrapper();
+    @include slider-all-track-no-color();
+}
+
+.good-thumb-marker {
+    @include mat-slider-disabled-thumb($marker-good);
+}
+
+.medium-thumb-marker {
+    @include mat-slider-disabled-thumb($marker-medium);
+}
+
+.bad-thumb-marker {
+    @include mat-slider-disabled-thumb($marker-bad);
+}
+
+.interval-track-wrapper {
+    position: absolute;
+    width: calc(#{100%} - #{2 * $mat-slider-padding}px);
+    margin: 0px #{$mat-slider-padding}px;
+    top: 20px;
+    display: flex;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.interval-bad-to-medium {
+    background: linear-gradient(90deg, $interval-color-bad, $interval-color-medium);
+    @include interval-track-parts();
+}
+
+.interval-medium-to-good {
+    background: linear-gradient(90deg, $interval-color-medium, $interval-color-good);
+    @include interval-track-parts();
+}
+
+.interval-good-to-medium {
+    background: linear-gradient(90deg, $interval-color-good, $interval-color-medium);
+    @include interval-track-parts();
+}
+
+.interval-medium-to-bad {
+    background: linear-gradient(90deg, $interval-color-medium, $interval-color-bad);
+    @include interval-track-parts();
+}

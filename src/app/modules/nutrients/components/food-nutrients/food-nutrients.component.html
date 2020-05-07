@@ -1,0 +1,7 @@
+<app-nutrient
+    *ngFor="let nutrient of quatityByNutrients.keysValues"
+    [nutrientName]="nutrient.key"
+    [quantity]="nutrient.value"
+    [nutrientsQuantitiestarget]="nutrientsQuantitiesTarget$ | async"
+>
+</app-nutrient>

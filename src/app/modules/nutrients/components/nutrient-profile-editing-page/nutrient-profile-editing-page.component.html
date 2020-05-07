@@ -1,0 +1,27 @@
+<div class="page-content">
+    <div class="page-title">Who is eating ?</div>
+    <h1>
+        <mat-icon>person</mat-icon>
+        People
+    </h1>
+    <app-number-input
+        [value]="numberOfPeople"
+        [defaultValue]="defaultNumberOfPeople"
+        [minValue]="minNumberOfPeople"
+        (valueChanged)="setNewNumberOfPeople($event)"
+    ></app-number-input>
+    <h1>
+        <mat-icon>tune</mat-icon>
+        Ratio of daily portion
+    </h1>
+    <div class="daily-portion-wrapper">
+        <div>{{percentageOfDailyPortion}}%</div>
+        <app-slider
+            [possibleValuesInterval]="percentageValuesInterval"
+            [value]="percentageOfDailyPortion"
+            (valueChanged)="setNewPercentageOfDailyPortion($event)"
+            class="daily-portion-slider"
+        >
+        </app-slider>
+    </div>
+</div>

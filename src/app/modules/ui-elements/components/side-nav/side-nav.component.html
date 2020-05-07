@@ -1,0 +1,17 @@
+<div class="side-nav-container">
+    <button
+        mat-button
+        *ngFor="let item of menu.items"
+        [disabled]="!isItemSelectable(item)"
+        (click)="selectItem(item)"
+        [ngClass]="{
+            'menu-item-selected': isItemSelected(item),
+            'menu-item-button': true
+        }"
+    >
+        <div class="menu-item-button-content">
+            <mat-icon class="menu-item-icon">{{item.matIconName}}</mat-icon>
+            <div>{{item.label}}</div>
+        </div>
+    </button>
+</div>

@@ -1,0 +1,26 @@
+@import "variables";
+@import "mixins";
+
+.button {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0rem 2rem;
+    @include simple-box-shadow();
+}
+
+::ng-deep .mat-button-focus-overlay {
+    background-color: transparent !important;
+}
+
+.rounded {
+    border-radius: 50rem;
+}
+
+.standard {
+    @include gradient-background($color-primary-for-gradient);
+}
+
+.secondary {
+    background-color: $color-faded;
+    color: white;
+}

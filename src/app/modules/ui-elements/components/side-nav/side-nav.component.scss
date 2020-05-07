@@ -1,0 +1,28 @@
+@import "variables";
+@import "mixins";
+
+.side-nav-container {
+    width: 16rem;
+    padding: 1rem 0;
+    background-color: white;
+}
+
+.menu-item-button {
+    width: 100%;
+    border-radius: 0px;
+    font-size: 1.2rem;
+}
+
+.menu-item-selected {
+    color: $color-primary;
+}
+
+.menu-item-button-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-item-icon {
+    margin: -3px 0.7rem 0 0;
+}

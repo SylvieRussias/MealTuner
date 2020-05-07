@@ -1,0 +1,8 @@
+{
+  "name": "BalancedMuchWow",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

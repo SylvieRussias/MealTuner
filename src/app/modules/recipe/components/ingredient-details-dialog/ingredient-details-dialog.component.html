@@ -1,0 +1,21 @@
+<div class="dialog-wrapper">
+    <div class="title">{{ingredientName}}</div>
+    <div class="nutrient-text-wrapper">Nutrients per 100g</div>
+    <div
+        *ngFor="let nutrient of allNutrients"
+        class="nutrient-text-wrapper"
+    >
+        <div>{{getNutrientDisplayString(nutrient)}}</div>
+        <div>
+            {{getNutrientQuantityPer100g(nutrient) | number:'.0-0'}}g
+        </div>
+    </div>
+    <div class="bottom-buttons">
+        <app-button-standard
+            [text]="'Close'"
+            [shape]="buttonsStyle"
+            (click)="closeDialog()"
+            class="dialog-button"
+        ></app-button-standard>
+    </div>
+</div>

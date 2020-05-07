@@ -1,0 +1,13 @@
+<mat-toolbar class="header">
+    <div class="header-content">
+        <app-toggle-main-menu-button (click)="menuButtonClick()"></app-toggle-main-menu-button>
+        <div class="app-icon"></div>
+        <div class="app-title">Meal Tuner</div>
+        <div class="header-right-wrapper">
+            <app-button-standard
+                [matIconsNames]="['person']"
+                (click)="profileButtonClick()"
+            ></app-button-standard>
+        </div>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,13 @@
+<div class="nutrient-wrapper">
+    <div class="nutrient-name">
+        {{getNutrientDisplayString(nutrientName)}}
+    </div>
+    <div class="slider-wrapper">
+        <app-slider-for-quality-intervals
+            *ngIf="nutrientQuantityIntervals"
+            [qualityIntervals]="nutrientQuantityIntervals"
+            [currentQuantity]="quantity"
+        ></app-slider-for-quality-intervals>
+    </div>
+    <div class="quantity">{{quantity | number:'.0-0'}}g</div>
+</div>
