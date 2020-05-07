@@ -1,6 +1,6 @@
-# Introduction
+# About
 
-It's a mobile app to help creating and balancing recipes.
+MealTuner a mobile app to help creating and balancing recipes.
 
 # Development
 
@@ -14,7 +14,7 @@ $ npm i
 
 $ ionic serve
 
-Get an API key for Food Data Central (https://fdc.nal.usda.gov/), and put it in ./src/assets/config/api-access-food-data-central.json (replace "<your-key-here>" by your key).
+Get an API key for Food Data Central (https://fdc.nal.usda.gov/), and put it in ./src/assets/config/api-access-food-data-central.json (replace "\<your-key-here>\" by your key).
 
 ### More info on https://ionicframework.com/docs
 
